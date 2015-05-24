@@ -1,1 +1,7 @@
 ---
+
+- name: add terraform to path
+  template:
+    src=terraform.sh.j2
+    dest=/etc/profile.d/terraform.sh
+    mode=0755
