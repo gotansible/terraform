@@ -4,7 +4,7 @@ terraform_user: terraform
 terraform_group: terraform
 
 terraform_build_dir: /tmp/terraform
-terraform_install_dir: /opt/terraform
+terraform_install_dir: /opt
 
 terraform_go_version: 1.4.2
 terraform_version: HEAD

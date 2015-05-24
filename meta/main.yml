@@ -2,21 +2,21 @@
 dependencies: 
   - role: gotansible.gobuild
     gobuild_project_path: github.com/hashicorp/terraform
+    gobuild_deploy_dest: "{{ terraform_install_dir }}"
     gobuild_go_version: "{{ terraform_go_version }}"
     gobuild_repo_version: "{{terraform_version}}"
     gobuild_commands:
       - make updatedeps
       - make dev
 
-
 galaxy_info:
-  author: your name
-  description: 
-  company: your company (optional)
-  license: license (GPLv2, CC-BY, etc)
+  author: Franklin Wise
+  description: Compiles and copies the binaries of terraform to a folder.
+  company: 
+  license: MIT
   min_ansible_version: 1.8
-  #platforms:
-  #- name: Ubuntu
+  platforms:
+  - name: Ubuntu
   #  versions:
   #  - all
   #  - lucid
@@ -100,19 +100,19 @@ galaxy_info:
   #  - 11SP2
   #  - 11SP3
   #
-  #categories:
-  #- cloud
-  #- cloud:ec2
+  categories:
+  - cloud
+  - cloud:ec2
   #- cloud:gce
   #- cloud:rax
-  #- clustering
+  - clustering
   #- database
   #- database:nosql
   #- database:sql
-  #- development
+  - development
   #- monitoring
   #- networking
-  #- packaging
+  - packaging
   #- system
   #- web
 
