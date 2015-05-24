@@ -3,7 +3,7 @@ dependencies:
   - role: gobuild
     gobuild_project_path: github.com/hashicorp/terraform
     gobuild_go_version: "{{ terraform_go_version }}"
-    gobuild_repo_version: v{{terraform_version}}
+    gobuild_repo_version: "{{terraform_version}}"
     gobuild_commands:
       - make updatedeps
       - make dev
