@@ -8,5 +8,5 @@ terraform_install_dir: /opt
 
 terraform_go_version: 1.4.2
 terraform_version: HEAD
-#0.5.1
+#0.5.3
 
