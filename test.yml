@@ -3,3 +3,5 @@
   sudo: true
   roles:
     - role: terraform
+      terraform_user: vagrant
+      terraform_group: vagrant

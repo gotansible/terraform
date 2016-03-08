@@ -1,6 +1,34 @@
 ---
 
-- name: add terraform to path
+- name: dependencies
+  include: depend.yml
+
+- name: ensure directories exist
+  file:
+    state: directory
+    path: "{{ item }}"
+    owner: "{{ terraform_user }}"
+    group: "{{ terraform_group }}"
+  with_items:
+    - "{{ terraform_build_dir }}"
+    - "{{ terraform_install_dir }}/terraform"
+
+- name: download terraform
+  get_url:
+    url: "{{ terraform_binary_url }}"
+    dest: "{{ terraform_build_dir }}/terraform.zip"
+  when: not terraform_build_dev
+
+- name: unarchive binaries
+  unarchive:
+    src: "{{ terraform_build_dir }}/terraform.zip"
+    dest: "{{ terraform_install_dir }}/terraform"
+    copy: no
+    owner: "{{ terraform_user }}"
+    group: "{{ terraform_group }}"
+  when: not terraform_build_dev
+
+- name: terraform - add terraform to path
   template:
     src=terraform.sh.j2
     dest=/etc/profile.d/terraform.sh

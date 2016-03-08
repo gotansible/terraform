@@ -3,8 +3,12 @@
 terraform_user: terraform
 terraform_group: terraform
 
-terraform_build_dir: /tmp/terraform
 terraform_install_dir: /opt
+terraform_binary_url: "https://releases.hashicorp.com/terraform/0.6.12/terraform_0.6.12_linux_amd64.zip"
+terraform_tempdir: /tmp/terraform
+
+terraform_build_dev: false
+terraform_build_dir: /tmp/terraform
 
 terraform_go_version: 1.4.2
 terraform_version: HEAD

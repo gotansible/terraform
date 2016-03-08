@@ -8,6 +8,7 @@ dependencies:
     gobuild_commands:
       - make updatedeps
       - make dev
+    when: terraform_build_dev
 
 galaxy_info:
   author: Franklin Wise

@@ -1,0 +1,12 @@
+---
+
+- name: depend - debian - install dependencies
+  apt:
+    name={{ item }}
+    state=present
+    update_cache=true
+    cache_valid_time=3600
+  with_items:
+    - unzip
+  when: ansible_os_family == 'Debian'
+
