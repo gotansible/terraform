@@ -33,3 +33,6 @@
     src=terraform.sh.j2
     dest=/etc/profile.d/terraform.sh
     mode=0755
+    owner={{ terraform_user }}
+    group={{ terraform_group }}
+
